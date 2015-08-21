@@ -30,7 +30,7 @@
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.Next = new System.Windows.Forms.Button();
+            this.Finish = new System.Windows.Forms.Button();
             this.Back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -50,15 +50,15 @@
             this.richTextBox1.Text = "Please enter a valid location for the installation below";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
-            // Next
+            // Finish
             // 
-            this.Next.Location = new System.Drawing.Point(447, 576);
-            this.Next.Name = "Next";
-            this.Next.Size = new System.Drawing.Size(75, 23);
-            this.Next.TabIndex = 4;
-            this.Next.Text = "Next";
-            this.Next.UseVisualStyleBackColor = true;
-            this.Next.Click += new System.EventHandler(this.Next_Click);
+            this.Finish.Location = new System.Drawing.Point(447, 576);
+            this.Finish.Name = "Finish";
+            this.Finish.Size = new System.Drawing.Size(75, 23);
+            this.Finish.TabIndex = 4;
+            this.Finish.Text = "Finish";
+            this.Finish.UseVisualStyleBackColor = true;
+            this.Finish.Click += new System.EventHandler(this.Next_Click);
             // 
             // Back
             // 
@@ -75,7 +75,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(536, 611);
             this.Controls.Add(this.Back);
-            this.Controls.Add(this.Next);
+            this.Controls.Add(this.Finish);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.textBox1);
             this.Name = "Form3";
@@ -89,7 +89,7 @@
 
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button Next;
+        private System.Windows.Forms.Button Finish;
         private System.Windows.Forms.Button Back;
     }
 }
