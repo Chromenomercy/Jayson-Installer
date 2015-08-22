@@ -29,12 +29,13 @@ namespace Interface
             FormPrev = _FormPrev;
             FormPrevPrev = _FormPrevPrev;
             selected_apps = FormPrevPrev.curitems;
+
+            extractPath = (FormPrev.downloadLocation).ToString();
+            zipPath = (extractPath + ".zip").ToString();
         }
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            extractPath = (FormPrev.downloadLocation).ToString();
-            zipPath = (extractPath + ".zip").ToString();
 
         }
         
@@ -97,7 +98,7 @@ namespace Interface
             Shell32.Folder sourceFile = objShell.NameSpace(zipFile);
             foreach (var file in sourceFile.Items())
             {
-                destinationFolder.CopyHere(file, 4 | 16);
+                destinationFolder.CopyHere(file, 16);
             }
         }
 
@@ -115,7 +116,7 @@ namespace Interface
             Shell32.Folder sourceFile = objShell.NameSpace(startFile);
             foreach (var file in sourceFile.Items())
             {
-                destinationFolder.CopyHere(file, 4 | 16);
+                destinationFolder.CopyHere(file, 16);
             }
         }
 
@@ -144,11 +145,11 @@ namespace Interface
             else
                 currentFileStatus = "Removing zip folder unsuccessful";
 
-            string bundlePath = (extractPath + @"\bundle - of - joy - 1.0.0").ToString();
+            string bundlePath = (extractPath + @"\bundle-of-joy-1.0.0").ToString();
             string finalLoc = (FormPrev.downloadLocation + @"\JaysonPackage").ToString();
 
             //need to test if null or crash
-            if (false) {
+            if (selected_apps.CheckedItems != null) {
                 foreach (object itemChecked in selected_apps.CheckedItems)
                 {
                     if (itemChecked.ToString() == "Souless Escape")

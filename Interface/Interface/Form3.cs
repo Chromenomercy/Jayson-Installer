@@ -21,6 +21,7 @@ namespace Interface
         {
             InitializeComponent();
             this.FormPrev = _FormPrev;
+            textBox1.Text = downloadLocation;
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
