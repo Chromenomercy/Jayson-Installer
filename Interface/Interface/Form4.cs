@@ -17,19 +17,23 @@ namespace Interface
     {
         string extractPath;
         string zipPath;
+        CheckedListBox selected_apps;
         static Timer myTimer = new System.Windows.Forms.Timer();
-        static bool exitFlag = false;
+        Form2 FormPrevPrev;
         Form3 FormPrev;
         string currentFileStatus;
-        public Form4(Form3 _FormPrev)
+
+        public Form4(Form3 _FormPrev, Form2 _FormPrevPrev)
         {
             InitializeComponent();
-            this.FormPrev = _FormPrev;
+            FormPrev = _FormPrev;
+            FormPrevPrev = _FormPrevPrev;
+            selected_apps = FormPrevPrev.curitems;
         }
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            extractPath = (this.FormPrev.downloadLocation + "bundle-of-joy.git").ToString();
+            extractPath = (FormPrev.downloadLocation).ToString();
             zipPath = (extractPath + ".zip").ToString();
 
         }
@@ -45,7 +49,7 @@ namespace Interface
             myTimer.Tick += new EventHandler(TimerEventProcessor);
 
             // Sets the timer interval to 5 seconds
-            myTimer.Interval = 50;
+            myTimer.Interval = 5;
             myTimer.Start();
 
             //Called when start button is clicked
@@ -115,7 +119,7 @@ namespace Interface
             }
         }
 
-        //regular update method (50 ms intervals)
+        //regular update method (5 ms intervals)
         private void TimerEventProcessor(Object myObject, EventArgs e)
         {
             progressLabel.Text = currentFileStatus;
@@ -124,20 +128,34 @@ namespace Interface
         private void ProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             progressBar.Value = e.ProgressPercentage;
-            currentFileStatus = ("Download in progress: " + progressBar.Value + @"%").ToString();
+            currentFileStatus = ("Download in progress: " + progressBar.Value + @"% Complete.").ToString();
         }
 
         private void Completed(object sender, AsyncCompletedEventArgs e)
         {
-            if ((this.FormPrev.downloadLocation[this.FormPrev.downloadLocation.Length - 1]).ToString() != "\\")
-                this.FormPrev.downloadLocation += "\\";
+            if ((FormPrev.downloadLocation[FormPrev.downloadLocation.Length - 1]).ToString() != "\\")
+                FormPrev.downloadLocation += "\\";
+            currentFileStatus = "Unzipping";
             UnZip(zipPath, extractPath);
+            currentFileStatus = "Unzipping successful";
+            currentFileStatus = "Removing zip folder";
             if (DeleteFile(zipPath))
                 currentFileStatus = "Removing zip folder successful";
             else
                 currentFileStatus = "Removing zip folder unsuccessful";
 
+            string bundlePath = (extractPath + @"\bundle - of - joy - 1.0.0").ToString();
+            string finalLoc = (FormPrev.downloadLocation + @"\JaysonPackage").ToString();
 
+            //need to test if null or crash
+            if (false) {
+                foreach (object itemChecked in selected_apps.CheckedItems)
+                {
+                    if (itemChecked.ToString() == "Souless Escape")
+                        Copy((bundlePath + @"\src\chromenomercy\soulless_escape").ToString(), finalLoc);
+                }
+            }
+            currentFileStatus = "Installation complete, please exit";
         }
 
         private void Start_Click(object sender, EventArgs e)

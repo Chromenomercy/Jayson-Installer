@@ -14,7 +14,7 @@ namespace Interface
     {
         Form2 FormPrev;
         Form4 FormNext;
-        public string downloadLocation = (@"C:\Users\" + Environment.UserName + @"\AppData\Roaming\").ToString();
+        public string downloadLocation = (@"C:\Users\" + Environment.UserName + @"\AppData\Roaming").ToString();
 
         public Form3(Form2 _FormPrev)
         {
@@ -40,7 +40,7 @@ namespace Interface
         private void Finish_Click_1(object sender, EventArgs e)
         {
             if (FormNext == null)
-                FormNext = new Form4(this);
+                FormNext = new Form4(this, FormPrev);
             FormNext.Show();
             this.Hide();
         }

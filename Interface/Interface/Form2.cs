@@ -14,7 +14,7 @@ namespace Interface
     {
         Form1 FormPrev;
         Form3 FormNext;
-        string curitems;
+        public CheckedListBox curitems;
 
         public Form2(Form1 _FormPrev)
         {
@@ -44,7 +44,7 @@ namespace Interface
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            curitems = checkedListBox1.SelectedItems.ToString();
+            curitems = checkedListBox1;
         }
 
         private void Next_Click_1(object sender, EventArgs e)
