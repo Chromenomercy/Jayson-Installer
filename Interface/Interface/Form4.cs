@@ -124,6 +124,7 @@ namespace Interface
         private void ProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             progressBar.Value = e.ProgressPercentage;
+            currentFileStatus = ("Download in progress: " + progressBar.Value + @"%").ToString();
         }
 
         private void Completed(object sender, AsyncCompletedEventArgs e)
@@ -135,6 +136,8 @@ namespace Interface
                 currentFileStatus = "Removing zip folder successful";
             else
                 currentFileStatus = "Removing zip folder unsuccessful";
+
+
         }
 
         private void Start_Click(object sender, EventArgs e)
