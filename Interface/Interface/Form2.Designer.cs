@@ -39,6 +39,7 @@
             // 
             this.richTextBox1.Location = new System.Drawing.Point(13, 13);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(165, 25);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "Please select apps to install:";
@@ -64,6 +65,7 @@
             // 
             this.richTextBox2.Location = new System.Drawing.Point(169, 576);
             this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ReadOnly = true;
             this.richTextBox2.Size = new System.Drawing.Size(192, 23);
             this.richTextBox2.TabIndex = 2;
             this.richTextBox2.Text = "Please click next when finished";

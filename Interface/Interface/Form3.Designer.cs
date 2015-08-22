@@ -46,6 +46,7 @@
             // 
             this.richTextBox1.Location = new System.Drawing.Point(94, 80);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(321, 43);
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "Please enter a valid location for the installation below";
