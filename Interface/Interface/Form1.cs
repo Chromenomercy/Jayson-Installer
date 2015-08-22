@@ -12,6 +12,8 @@ namespace Interface
 {
     public partial class Form1 : Form
     {
+        Form2 FormNext;
+
         public Form1()
         {
             InitializeComponent();
@@ -27,10 +29,27 @@ namespace Interface
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Next_Click(object sender, EventArgs e)
         {
-            Form2.Show();
+            
+        }
+
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Next_Click_1(object sender, EventArgs e)
+        {
+            if (FormNext == null)
+                FormNext = new Form2(this);
+            FormNext.Show();
             this.Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

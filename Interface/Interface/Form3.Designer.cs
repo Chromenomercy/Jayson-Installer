@@ -40,6 +40,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(321, 20);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // richTextBox1
             // 
@@ -52,22 +53,23 @@
             // 
             // Finish
             // 
-            this.Finish.Location = new System.Drawing.Point(447, 576);
+            this.Finish.Location = new System.Drawing.Point(446, 576);
             this.Finish.Name = "Finish";
             this.Finish.Size = new System.Drawing.Size(75, 23);
-            this.Finish.TabIndex = 4;
+            this.Finish.TabIndex = 2;
             this.Finish.Text = "Finish";
             this.Finish.UseVisualStyleBackColor = true;
-            this.Finish.Click += new System.EventHandler(this.Next_Click);
+            this.Finish.Click += new System.EventHandler(this.Finish_Click_1);
             // 
             // Back
             // 
-            this.Back.Location = new System.Drawing.Point(12, 576);
+            this.Back.Location = new System.Drawing.Point(13, 576);
             this.Back.Name = "Back";
             this.Back.Size = new System.Drawing.Size(75, 23);
-            this.Back.TabIndex = 5;
+            this.Back.TabIndex = 3;
             this.Back.Text = "Back";
             this.Back.UseVisualStyleBackColor = true;
+            this.Back.Click += new System.EventHandler(this.Back_Click_1);
             // 
             // Form3
             // 

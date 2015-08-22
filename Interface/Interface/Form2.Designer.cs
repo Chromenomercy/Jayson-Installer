@@ -52,7 +52,8 @@
             "Jayson(Chatterbot)",
             "Python v3.4.3 (Separate installer)",
             "Pygame (Separate installer)",
-            "Souless Escape"});
+            "Souless Escape",
+            "Jelly Jump"});
             this.checkedListBox1.Location = new System.Drawing.Point(30, 57);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(283, 499);
@@ -75,6 +76,7 @@
             this.Next.TabIndex = 3;
             this.Next.Text = "Next";
             this.Next.UseVisualStyleBackColor = true;
+            this.Next.Click += new System.EventHandler(this.Next_Click_1);
             // 
             // Back
             // 
@@ -84,6 +86,7 @@
             this.Back.TabIndex = 4;
             this.Back.Text = "Back";
             this.Back.UseVisualStyleBackColor = true;
+            this.Back.Click += new System.EventHandler(this.Back_Click_1);
             // 
             // Form2
             // 
