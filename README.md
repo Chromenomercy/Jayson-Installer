@@ -1,2 +1,2 @@
 # Jayson-Installer
-This program will install Jayson (an imperative version) as well as some python games
+Not in use - intergrated inside Bundle of Joy
